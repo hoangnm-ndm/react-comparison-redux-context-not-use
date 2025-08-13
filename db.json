@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "name": "Product 1",
+      "price": 100000,
+      "id": "1"
+    },
+    {
+      "id": "0ea6",
+      "name": "them moi san pham",
+      "price": 2222
+    },
+    {
+      "id": "cefe",
+      "name": "them moi san pham",
+      "price": 3434
+    },
+    {
+      "id": "8eab",
+      "name": "moi",
+      "price": 200
+    },
+    {
+      "id": "f097",
+      "name": "them moi san pham",
+      "price": 333
+    }
+  ]
+}

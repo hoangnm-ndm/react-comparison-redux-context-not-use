@@ -1,12 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./features/counter/counterSlice";
-import todoReducer from "./features/todo/todoSlice";
+import productsReducer from "./productsSlice";
 
 const store = configureStore({
 	reducer: {
-		counter: counterReducer,
-		todo: todoReducer,
+		products: productsReducer,
 	},
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
