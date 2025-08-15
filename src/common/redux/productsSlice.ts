@@ -12,7 +12,7 @@ const initialState: ProductsState = {
 
 export const inititalProduct: Product = {
 	id: 0,
-	name: "",
+	title: "",
 	price: 0,
 };
 
@@ -22,6 +22,7 @@ const productsSlice = createSlice({
 	reducers: {
 		setProducts(state, action: PayloadAction<Product[]>) {
 			state.products = action.payload;
+			// { products: [ {id: 1, name: "Product 1", price: 100}, ...], loading: false, error: null, success: false }
 			state.loading = false;
 			state.error = null;
 		},

@@ -53,13 +53,11 @@ const ProductManagementPage: React.FC = () => {
 			dispatch(setLoading());
 			if (isEditing && editingId) {
 				const { data: dataUpdated } = await instance.put(`/products/${editingId}`, data);
-				console.log(dataUpdated);
 				dispatch(updateProduct({ id: editingId, ...dataUpdated }));
 				setIsEditing(false);
 				setEditingId(null);
 			} else {
 				const { data: newProduct } = await instance.post("/products", data);
-				console.log(newProduct);
 				dispatch(addProduct(newProduct));
 			}
 			reset();
@@ -81,7 +79,7 @@ const ProductManagementPage: React.FC = () => {
 
 	// Chọn sản phẩm để sửa
 	const handleEditProduct = (product: Product) => {
-		setValue("name", product.name);
+		setValue("name", product.title);
 		setValue("price", product.price);
 		setIsEditing(true);
 		setEditingId(product.id);
@@ -123,7 +121,7 @@ const ProductManagementPage: React.FC = () => {
 				{products.map((product) => (
 					<li key={product.id} className="flex justify-between items-center border-b py-2">
 						<span>
-							{product.name} - ${product.price}
+							{product.title} - ${product.price}
 						</span>
 						<div>
 							<button onClick={() => handleEditProduct(product)} className="bg-yellow-500 text-white p-1 mr-2">
